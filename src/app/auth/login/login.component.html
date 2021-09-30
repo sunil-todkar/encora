@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="login-section-wrapper">
+      <div class="col-md-12">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <h3 class="mb-0">LOGIN</h3>
+              <hr />
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="username"
+              ><i class="fa fa-user" aria-hidden="true"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="User Name"
+              aria-label="Username"
+              aria-describedby="username"
+              formControlName="userName"
+              [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.userName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.userName.errors.required">
+                User Name is required
+              </div>
+              <div *ngIf="f.userName.errors.email">
+                Please enter valid email address
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="password"
+              ><i class="fa fa-unlock-alt" aria-hidden="true"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Password"
+              aria-label="Password"
+              aria-describedby="password"
+              formControlName="password"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              maxlength="16"
+            />
+            <div
+              *ngIf="submitted && f.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.minlength">
+                The password should be minimum 8 length
+              </div>
+              <div *ngIf="f.password.errors.maxlength">
+                The password should be maximum 16 length
+              </div>
+              <div *ngIf="f.password.errors.pattern">
+                Password at least one Uppercase and one special character
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3" *ngIf="isError">
+            <p class="error">Incorrect Email</p>
+          </div>
+
+          <div class="">
+            <button type="submit" class="btn btn-primary">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

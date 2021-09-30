@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: ArchivoBlack-Regular;
+  src: url("./assets/fonts/ArchivoBlack-Regular.ttf");
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: Poppins-Regular;
+}
+
+a {
+  cursor: pointer;
+}
+
+.main-wrapper {
+  height: calc(100vh - 100px);
+}
+
+.error {
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
+h2#swal2-title {
+  font-size: 20px;
+}

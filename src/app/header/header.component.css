@@ -1,0 +1,25 @@
+.header {
+  background-color: #565656;
+  color: #f7f7f7;
+}
+
+.navbar-brand {
+  font-family: ArchivoBlack-Regular;
+  cursor: pointer;
+}
+
+.nav-name-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav-name-wrapper p {
+  margin-bottom: 0px;
+}
+
+.logout-link {
+  color: #fff;
+  text-decoration: none;
+}
